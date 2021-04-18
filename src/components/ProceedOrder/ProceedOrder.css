@@ -1,0 +1,8 @@
+@media (max-width: 991.98px) {
+  .form-div {
+    width: 100% !important;
+  }
+  .form-div form {
+    width: 100% !important;
+  }
+}

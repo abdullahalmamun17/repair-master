@@ -1,0 +1,17 @@
+.header-container {
+  background-image: url("../../../images/mobile-bg.jpg");
+  background-size: cover;
+}
+.headermain-container {
+  height: 600px;
+}
+
+.info-card-border {
+  border-right: 0.5px solid gray;
+}
+
+@media (max-width: 991.98px) {
+  .info-card-border {
+    border-bottom: 0.5px solid gray;
+  }
+}
