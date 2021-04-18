@@ -12,7 +12,7 @@ const AddReview = () => {
     const decoded = jwt_decode(token);
 
     const onSubmit = (data) => {
-        fetch('http://localhost:5000/add-review', {
+        fetch('https://repair-master.herokuapp.com/add-review', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({

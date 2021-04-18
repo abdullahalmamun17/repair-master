@@ -12,7 +12,7 @@ const Admin = ({ admin }) => {
     }
 
     const deleteAdmin = () => {
-        fetch('http://localhost:5000/admin/delete/' + admin._id, {
+        fetch('https://repair-master.herokuapp.com/admin/delete/' + admin._id, {
             method: 'DELETE',
         })
             .then(result => alert('Admin Deleted...'))

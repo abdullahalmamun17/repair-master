@@ -7,13 +7,13 @@ const AdminPanel = () => {
     const [adminPanel, setAdminPanel] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/admin')
+        fetch('https://repair-master.herokuapp.com/admin')
             .then(res => res.json())
             .then(data => setAdminPanel(data))
     }, [adminPanel])
 
     const onSubmit = (data, e) => {
-        fetch('http://localhost:5000/add-admin', {
+        fetch('https://repair-master.herokuapp.com/add-admin', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(data)

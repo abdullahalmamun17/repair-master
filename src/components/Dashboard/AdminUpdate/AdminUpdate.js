@@ -21,7 +21,7 @@ const AdminUpdate = ({ modalIsOpen, closeModal, id, email }) => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/admin/update/' + id, {
+        fetch('https://repair-master.herokuapp.com/admin/update/' + id, {
             method: 'PATCH',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(data)

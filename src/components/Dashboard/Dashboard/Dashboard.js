@@ -19,7 +19,7 @@ const Dashboard = () => {
     useEffect(() => {
         const email = loggedInUser.email || decoded.email
 
-        fetch('http://localhost:5000/is-admin', {
+        fetch('https://repair-master.herokuapp.com/is-admin', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({ email })

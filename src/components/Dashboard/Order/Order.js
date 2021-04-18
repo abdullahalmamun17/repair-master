@@ -7,7 +7,7 @@ const Order = ({ order }) => {
     const handleOnChange = (event) => {
         const status = event.target.value
 
-        fetch(`http://localhost:5000/order-updated/${order._id}`, {
+        fetch(`https://repair-master.herokuapp.com/order-updated/${order._id}`, {
             method: "PATCH",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({ status })

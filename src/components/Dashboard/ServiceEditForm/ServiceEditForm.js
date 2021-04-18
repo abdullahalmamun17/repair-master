@@ -20,7 +20,7 @@ const ServiceEditForm = ({ modalIsOpen, closeModal, id }) => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/service/edit/' + id, {
+        fetch('https://repair-master.herokuapp.com/service/edit/' + id, {
             method: 'PATCH',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(data)

@@ -14,7 +14,7 @@ const ProceedOrder = () => {
     const [services, setServices] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://repair-master.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
@@ -37,7 +37,7 @@ const ProceedOrder = () => {
             date: new Date()
         }
 
-        fetch('http://localhost:5000/order-placed', {
+        fetch('https://repair-master.herokuapp.com/order-placed', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(orderData)

@@ -12,7 +12,7 @@ const ManageService = ({ service }) => {
     }
 
     const deleteService = () => {
-        fetch('http://localhost:5000/service/delete/' + service._id, {
+        fetch('https://repair-master.herokuapp.com/service/delete/' + service._id, {
             method: 'DELETE',
         })
             .then(result => alert('Service Deleted...'))
