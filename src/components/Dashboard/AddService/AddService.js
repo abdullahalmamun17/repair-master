@@ -16,7 +16,7 @@ const AddService = () => {
             imageURL,
             date: new Date()
         }
-        fetch('https://repair-master.herokuapp.com/https://repair-master.herokuapp.com/add-service', {
+        fetch('https://repair-master.herokuapp.com/add-service', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(serviceData)

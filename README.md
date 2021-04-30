@@ -1,11 +1,25 @@
-### Repair Master
+# Project Name: `Repair Master`
 
-Repair Master: [Live Link](https://repair-master-201e6.web.app/).
+# Repair Master: [Live](https://repair-master-201e6.web.app/)
+
+# Projects Description
 
 ### Features
 
-1. Admin Panel
-2. Dashboard
-3. React Router
-4. MongoDB
-5. Repairing Service
+1. This is an Electronics Devices Repairing Service Website.
+2. Different Dashboard for Admin & User. Admin can add and remove service from dashboard.
+3. Must have login for getting any service. User can see order list & order status in dashboard.
+4. Technologies: MERN Stack, Stripe Payment Gateway
+5. Code: https://github.com/abdullahalmamun17/repair-master
+
+# Run on your Computer
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
+
+The page will reload if you make edits.
+You will also see any lint errors in the console.

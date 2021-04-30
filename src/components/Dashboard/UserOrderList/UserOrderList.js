@@ -16,7 +16,7 @@ const UserOrderList = ({ order }) => {
     }
 
     return (
-        <div className="col-md-4">
+        <div className="col-md-4 mb-4">
             <div class="card bg-light">
                 <div className="d-flex justify-content-between p-2">
                     <img src={order.serviceDetail.imageURL} class="card-img-top" style={{ width: '50px' }} alt="..." />

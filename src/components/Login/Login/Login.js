@@ -49,12 +49,12 @@ const Login = () => {
 
 
     return (
-        <section>
+        <section className="font-poppins">
             <Navbar></Navbar>
             <div className="container bg-light p-5 mt-5" style={{ borderRadius: '10px' }}>
                 <div className="d-flex align-items-center justify-content-center">
                     <img src={repairImg} className="img-fluid me-4" style={{ width: '50px' }} alt="" />
-                    <h2>Repair Master</h2>
+                    <h2 style={{ color: '#C55FFC' }}>Repair <span style={{ color: '#F85C70' }}>Master</span></h2>
                 </div>
                 <div className="text-center mt-5">
                     <h4>Login With</h4>

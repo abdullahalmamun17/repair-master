@@ -1,8 +1,10 @@
 import {
     CardCvcElement,
+
     CardExpiryElement, CardNumberElement, useElements, useStripe
 } from "@stripe/react-stripe-js";
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
+import { useHistory } from "react-router";
 
 
 const useOptions = () => {
@@ -30,6 +32,8 @@ const useOptions = () => {
 };
 
 const PaymentForm = ({ handleOrderPlaced }) => {
+    const [error, setError] = useState(null)
+    const history = useHistory()
     const stripe = useStripe();
     const elements = useElements();
     const options = useOptions();
@@ -48,7 +52,14 @@ const PaymentForm = ({ handleOrderPlaced }) => {
             card: elements.getElement(CardNumberElement)
         });
 
-        handleOrderPlaced(payload.paymentMethod)
+        if (payload.error) {
+            console.log('[error]', payload.error);
+            setError(payload.error.message)
+        } else {
+            handleOrderPlaced(payload.paymentMethod)
+            setError(null)
+            history.replace('/dashboard')
+        }
     };
 
 
@@ -76,6 +87,9 @@ const PaymentForm = ({ handleOrderPlaced }) => {
                     />
                 </div>
             </div>
+            {
+                error && <h6 className="my-1 text-danger">{error}</h6>
+            }
             <button className="btn btn-primary" type="submit" disabled={!stripe}>
                 Proceed to Pay
             </button>

@@ -2,6 +2,7 @@ import jwt_decode from 'jwt-decode';
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
 import Order from '../Order/Order';
+import Spinner from '../Spinner/Spinner';
 import UserOrderList from '../UserOrderList/UserOrderList';
 
 const OrderList = () => {
@@ -9,6 +10,7 @@ const OrderList = () => {
     const [loggedInUser] = useContext(UserContext)
     const [isAdmin, setIsAdmin] = useState(false)
     const decoded = jwt_decode(sessionStorage.getItem('token'));
+    const [isEmpty, setIsEmpty] = useState(null)
 
 
 
@@ -21,7 +23,15 @@ const OrderList = () => {
             body: JSON.stringify({ email })
         })
             .then(res => res.json())
-            .then(data => setOrderList(data))
+            .then(data => {
+                setOrderList(data)
+                if (data.length === 0) {
+                    setIsEmpty(true)
+                }
+                else {
+                    setIsEmpty(false)
+                }
+            })
     }, [])
 
     useEffect(() => {
@@ -35,6 +45,7 @@ const OrderList = () => {
             .then(res => res.json())
             .then(result => setIsAdmin(result))
     }, [])
+
 
     return (
         <div>
@@ -62,12 +73,18 @@ const OrderList = () => {
                     </table>
                     : <div className="row">
                         {
+                            (!isEmpty && orderList.length === 0) && <Spinner></Spinner>
+                        }
+                        {
+                            isEmpty && <h1 className="mt-5 text-danger">You have not any order yet! </h1>
+                        }
+                        {
                             orderList.map(order => <UserOrderList order={order}></UserOrderList>)
                         }
                     </div>
             }
 
-        </div>
+        </div >
     );
 };
 

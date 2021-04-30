@@ -1,8 +1,9 @@
 import React from 'react';
 
 const Order = ({ order }) => {
-    const { name, email, service } = order
+    const { name, email, service, billingEmail } = order
     const { brand } = order.paymentMethod.card
+
 
     const handleOnChange = (event) => {
         const status = event.target.value
@@ -20,7 +21,7 @@ const Order = ({ order }) => {
     return (
         <tr>
             <td>{name}</td>
-            <td>{email}</td>
+            <td>{billingEmail || email}</td>
             <td>{service}</td>
             <td style={{ width: '100px' }}>{brand}</td>
             <td style={{ width: '150px' }}>
